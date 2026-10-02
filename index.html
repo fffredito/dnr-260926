@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>HANDING ONESELF OVER TO MOLOCH? REAL? : demonolatry</title>
+<style>
+  :root {
+    --page: #e5e5e5;
+    --panel: #ffffff;
+    --border: #98aab1;
+    --line: #006699;
+    --th-top: #3f7fb0;
+    --th-bot: #1f5582;
+    --th-text: #ffa34f;
+    --row1: #efefef;
+    --row2: #dee3e7;
+    --row3: #d1d7dc;
+    --text: #000;
+    --meta: #555;
+    --link: #006699;
+    --hover: #dd6900;
+    --quote-bg: #fafafa;
+    --quote-border: #d1d7dc;
+    --up: #ff4500;
+    --down: #6a5cff;
+    --arrow: #9aa7b1;
+    --op: #0055df;
+    --mod: #228822;
+    --brand: #1f5582;
+    --brand-text: #1f3f5f;
+    --strong: #000;
+    --soft: #333;
+    --faded: #777;
+    --rank: #7a4a00;
+    --strip-top: #fff;
+    --strip-bot: #eef2f5;
+    --field: #fff;
+    --gone: #bbb;
+    --arrow-hover: #6f8190;
+  }
+  /* Dark mode: toggled from the banner link, remembered on this computer. */
+  :root[data-theme="dark"] {
+    --page: #121417;
+    --panel: #1b1f24;
+    --border: #3a4650;
+    --line: #2c5d80;
+    --th-top: #2a5a80;
+    --th-bot: #163a58;
+    --row1: #1e2328;
+    --row2: #23292f;
+    --row3: #2c333a;
+    --text: #d6dbe0;
+    --meta: #9aa5ae;
+    --link: #6fb3e0;
+    --hover: #ff9a3c;
+    --quote-bg: #171b1f;
+    --quote-border: #2f373f;
+    --arrow: #5e6b75;
+    --op: #3d7bff;
+    --mod: #3a9a3a;
+    --brand: #2a6a9e;
+    --brand-text: #a9c8e4;
+    --strong: #eef1f4;
+    --soft: #c4ccd3;
+    --faded: #7d8790;
+    --rank: #d9a35a;
+    --strip-top: #1f252b;
+    --strip-bot: #181d22;
+    --field: #14181c;
+    --gone: #444;
+    --arrow-hover: #8a98a3;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); color: var(--text); }
+  body { font: 12px/1.45 Verdana, Arial, Helvetica, sans-serif; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--hover); text-decoration: underline; }
+  button { font: inherit; }
+
+  #wrap { max-width: 1060px; margin: 0 auto; padding: 10px 16px 30px; }
+
+  /* ---------- Banner ---------- */
+  .banner {
+    background: var(--panel); border: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px; padding: 10px 14px; flex-wrap: wrap;
+  }
+  .logo-word { font: bold 26px/1 Georgia, "Times New Roman", serif; color: var(--brand-text); letter-spacing: -.5px; }
+  .logo-sub { font-size: 11px; color: var(--meta); }
+  .banner-nav { margin-left: auto; font-size: 11px; font-weight: bold; text-align: right; }
+  .banner-nav a { margin-left: 8px; }
+
+  /* ---------- Community strip (the subreddit part) ---------- */
+  .community {
+    background: linear-gradient(var(--strip-top), var(--strip-bot)); border: 1px solid var(--border); border-top: 0;
+    display: flex; align-items: center; gap: 10px; padding: 8px 14px; flex-wrap: wrap;
+  }
+  .community-icon {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #ffa34f;
+    display: flex; align-items: center; justify-content: center; font: bold 18px Georgia, serif; flex-shrink: 0;
+  }
+  .community-name { font-size: 16px; font-weight: bold; color: var(--brand-text); }
+  .community-desc { font-size: 11px; color: var(--meta); }
+  .community-stats { margin-left: auto; font-size: 11px; color: var(--meta); text-align: right; }
+  .community-stats b { color: var(--strong); }
+  .online-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #46d160; margin-right: 3px; }
+  .joinbtn {
+    display: inline-block; margin-left: 8px; background: var(--brand); color: #fff; font-weight: bold; font-size: 11px;
+    padding: 3px 12px; border-radius: 12px; border: 0;
+  }
+
+  /* ---------- Nav bar ---------- */
+  .navbar { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px; }
+  .crumbs { font-size: 11px; font-weight: bold; }
+  .thread-title { font: bold 18px Verdana, sans-serif; color: var(--strong); margin: 0 0 3px; }
+  .flair { display: inline-block; font-size: 10px; font-weight: bold; background: var(--brand); color: #fff; padding: 1px 5px; border-radius: 2px; vertical-align: 3px; margin-right: 4px; }
+  .btn {
+    display: inline-block; font-size: 11px; font-weight: bold; color: #fff !important; text-decoration: none !important;
+    background: linear-gradient(#4b8cc0, #1f5582); border: 1px solid #16456b; border-radius: 2px; padding: 3px 10px;
+  }
+  .btn:hover { background: linear-gradient(#5a9bd0, #2a6594); }
+  .pager { font-size: 11px; color: var(--meta); }
+  .pager b { color: var(--strong); }
+  .sortbar { font-size: 11px; color: var(--meta); }
+  .sortbar a { font-weight: bold; }
+
+  /* ---------- Thread table ---------- */
+  .forumline { width: 100%; border: 1px solid var(--line); background: var(--panel); border-collapse: separate; border-spacing: 1px; }
+  .forumline th {
+    background: linear-gradient(var(--th-top), var(--th-bot)); color: var(--th-text);
+    font-size: 11px; font-weight: bold; padding: 5px 8px; text-align: left; white-space: nowrap;
+  }
+  .forumline td { vertical-align: top; }
+  .row1 { background: var(--row1); }
+  .row2 { background: var(--row2); }
+  .row3 { background: var(--row3); }
+
+  .author-col { width: 170px; padding: 8px; }
+  .author-col .name { font-weight: bold; font-size: 12px; }
+  .author-col .name a { color: var(--strong); }
+  .tag { display: inline-block; font-size: 9px; font-weight: bold; color: #fff; padding: 0 3px; border-radius: 2px; vertical-align: 1px; }
+  .tag.op { background: var(--op); }
+  .tag.mod { background: var(--mod); }
+  .rank { font-size: 10px; color: var(--rank); margin: 1px 0 6px; }
+  .avatar {
+    width: 64px; height: 64px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font: bold 28px Georgia, serif; color: #fff; margin-bottom: 6px;
+  }
+  .author-col .meta { font-size: 10px; color: var(--meta); line-height: 1.6; }
+
+  .post-col { padding: 0; }
+  .post-head {
+    display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    font-size: 10px; color: var(--meta); padding: 5px 10px; border-bottom: 1px solid var(--row3);
+  }
+  .post-head b { color: var(--strong); }
+  .post-head .num a { font-weight: bold; }
+  .post-main { display: flex; gap: 10px; padding: 8px 10px 4px; }
+  .votes { width: 34px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .arrow { width: 16px; height: 15px; border: 0; padding: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .arrow path { fill: var(--arrow); }
+  .arrow:hover path { fill: var(--arrow-hover); }
+  .arrow.up.on path { fill: var(--up); }
+  .arrow.down.on path { fill: var(--down); }
+  .score { font-weight: bold; font-size: 11px; color: var(--soft); margin: 1px 0; }
+  .score.liked { color: var(--up); }
+  .score.disliked { color: var(--down); }
+  .score.neg { color: #8a8a8a; }
+  .post-text { flex: 1; min-width: 0; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; min-height: 40px; }
+  .post-text p { margin: 0 0 8px; }
+  .post-text.faded { color: var(--faded); }
+  .op-title { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
+  .quote {
+    background: var(--quote-bg); border: 1px solid var(--quote-border); border-left: 3px solid var(--brand);
+    padding: 5px 8px; margin: 0 0 8px; font-size: 12px; color: var(--soft);
+  }
+  .quote-head { font-size: 10px; font-weight: bold; color: var(--meta); margin-bottom: 2px; }
+  .removed { color: var(--faded); font-style: italic; }
+  .attach { margin: 0 0 8px; }
+  .attach-head { font-size: 10px; font-weight: bold; color: var(--meta); margin-bottom: 3px; }
+  .attach img { display: block; max-width: 100%; width: 360px; border: 1px solid var(--border); }
+  .attach-missing { width: 360px; max-width: 100%; height: 200px; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--meta); font-size: 11px; }
+  .edited { font-size: 10px; color: var(--meta); font-style: italic; margin: 0 10px 6px 54px; }
+  .sig { margin: 4px 10px 6px 54px; padding-top: 4px; border-top: 1px solid var(--row3); font-size: 10px; color: var(--meta); font-style: italic; }
+  .post-foot {
+    display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    padding: 4px 10px; font-size: 10px; font-weight: bold; border-top: 1px dotted var(--row3);
+  }
+  .post-foot a { margin-right: 8px; color: var(--meta); }
+  .post-foot a:hover { color: var(--hover); }
+  .mod-note { font-size: 10px; color: var(--mod); font-weight: bold; }
+  .spacer td { height: 2px; background: var(--row3); padding: 0; }
+
+  /* ---------- Quick reply / online ---------- */
+  .quick td { padding: 8px; }
+  .quick textarea { width: 100%; height: 90px; font: 12px Verdana, sans-serif; border: 1px solid var(--border); padding: 5px; background: var(--field); color: var(--text); }
+  .quick .hint { font-size: 10px; color: var(--meta); margin-top: 4px; }
+  .online td { padding: 6px 8px; font-size: 11px; line-height: 1.7; }
+  .mt { margin-top: 10px; }
+  .footer { text-align: center; font-size: 10px; color: var(--meta); margin-top: 12px; line-height: 1.8; }
+
+  @media (max-width: 700px) {
+    .forumline, .forumline tbody, .post-row, .post-row > td { display: block; width: 100%; }
+    .forumline .headrow { display: none; }
+    .author-col { width: 100%; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid var(--row3); }
+    .avatar { width: 40px; height: 40px; font-size: 18px; margin: 0; flex-shrink: 0; }
+    .author-col .meta { display: none; }
+    .edited, .sig { margin-left: 10px; }
+    .community-stats { margin-left: 0; text-align: left; }
+    .banner-nav { margin-left: 0; text-align: left; }
+  }
+</style>
+<script>try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+</head>
+<body>
+<div id="wrap">
+
+  <div class="banner">
+    <div>
+      <div class="logo-word" id="site-name"></div>
+      <div class="logo-sub" id="site-tag"></div>
+    </div>
+    <div class="banner-nav">
+      <a href="#">FAQ</a><a href="#">Search</a><a href="#">Members</a><a href="#">Communities</a><br>
+      <a href="#">Register</a><a href="#">Log in</a><a href="#" id="theme-toggle">Dark mode</a>
+    </div>
+  </div>
+
+  <div class="community">
+    <div class="community-icon">&#8859;</div>
+    <div>
+      <div class="community-name" id="community-name"></div>
+      <div class="community-desc" id="community-desc"></div>
+    </div>
+    <div class="community-stats" id="community-stats"></div>
+  </div>
+
+  <div class="navbar">
+    <div>
+      <h1 class="thread-title"><span class="flair" id="flair"></span><span id="thread-title"></span></h1>
+      <div class="crumbs" id="crumbs"></div>
+    </div>
+    <div style="text-align:right">
+      <a class="btn" href="#">New Topic</a> <a class="btn" href="#quick">Post Reply</a>
+      <div class="pager mt" id="pager"></div>
+    </div>
+  </div>
+  <div class="sortbar">sort posts by: <a href="#">oldest first</a> &middot; <a href="#">top voted</a> &middot; <a href="#">newest</a></div>
+
+  <table class="forumline mt" id="thread">
+    <tr class="headrow"><th>Author</th><th>Message</th></tr>
+  </table>
+
+  <table class="forumline mt quick" id="quick">
+    <tr><th>Quick Reply</th></tr>
+    <tr><td class="row1"><textarea></textarea><div class="hint">You must be logged in to reply. <a href="#">Log in</a> or <a href="#">Register</a>.</div></td></tr>
+  </table>
+
+  <div class="navbar">
+    <div class="crumbs" id="crumbs-bottom"></div>
+    <div class="pager" id="pager-bottom"></div>
+  </div>
+
+  <table class="forumline online">
+    <tr><th>Who is online</th></tr>
+    <tr><td class="row1" id="online"></td></tr>
+  </table>
+
+  <div class="footer" id="footer"></div>
+</div>
+
+<script>
+/*
+ * EVERYTHING ON SCREEN IS SET HERE. Edit, save, press F5.
+ * Times are fixed text, so the page looks the same on every take.
+ *
+ * POSTS run top to bottom in the order shown (#2, #3, ...). The original post is #1.
+ *   [author, points, time, text, quote, options]
+ *   quote   = the # of an earlier post this one replies to (0 = none). Its text is shown in a quote box.
+ *   options = { edited: '12 minutes ago', deleted: true, removed: true, modNote: true, image: 'circle.jpg' }
+ *   image   = a photo file in the same folder as this page, shown under the post text.
+ * USERS holds the author column details. Unknown names get defaults.
+ */
+var SITE = {
+  name: 'hollowthread',
+  tagline: 'communities for the curious, the devoted, and the damned',
+  prefix: 'h/',
+  community: 'demonolatry',
+  description: 'Discussion of the old names, their appetites, and the ones who answer. Lurk before you post.',
+  category: 'The Old Names',
+  members: '31,666',
+  membersWord: 'initiates',
+  online: '413',
+  onlineWord: 'summoned now',
+  onlineNames: ['Brazen_Calf', 'tophet_dweller', 'sevenchambers', 'quietoffering', 'herbwitch_dani', 'ValleyOfHinnom', 'throwaway_mlk09'],
+  guests: 391
+};
+
+var OP = {
+  title: 'HANDING ONESELF OVER TO MOLOCH? REAL?',
+  flair: 'QUESTION',
+  author: 'throwaway_mlk09',
+  time: '7 hours ago',
+  points: 1207,
+  views: '9,814',
+  body: [
+    'been reading about this for weeks and I can\'t stop. people keep saying you can hand yourself over to him and he "takes you in."',
+    'is this real? has anyone here actually done it? what happens after?',
+    'not trolling. I just need to know. throwaway for obvious reasons.'
+  ]
+};
+
+var USERS = {
+  throwaway_mlk09:      { rank: 'Newly Arrived', joined: 'yesterday', posts: 11, karma: 1, color: '#6b6b6b' },
+  HollowMod:            { rank: 'Moderator', joined: 'Mar 2013', posts: 8120, karma: 14022, color: '#228822', mod: true },
+  Brazen_Calf:          { rank: 'Keeper of the Brass', joined: 'Oct 2014', posts: 3391, karma: 48110, color: '#8a5a1f', mod: true, sig: 'we are his prize' },
+  tophet_dweller:       { rank: 'Keeper of the Seventh', joined: 'Jan 2013', posts: 5027, karma: 61333, color: '#5a1f1f', mod: true, sig: 'seven chambers. seven gifts.' },
+  sevenchambers:        { rank: 'Adept', joined: 'Jun 2016', posts: 1288, karma: 20417, color: '#3a2d6a' },
+  quietoffering:        { rank: 'Adept', joined: 'Aug 2018', posts: 940, karma: 9902, color: '#2d4f7a', sig: 'he knows.' },
+  xX_sulfur_Xx:         { rank: 'Acolyte', joined: 'Feb 2020', posts: 611, karma: 4410, color: '#8a6d1f' },
+  genuinely_concerned_: { rank: 'Visitor', joined: '2 days ago', posts: 6, karma: -71, color: '#4a6a4a' },
+  bronzebellyy:         { rank: 'Acolyte', joined: 'Nov 2019', posts: 702, karma: 6120, color: '#9a6a2a' },
+  ashfall_77:           { rank: 'Acolyte', joined: 'Apr 2021', posts: 388, karma: 3302, color: '#555555' },
+  herbwitch_dani:       { rank: 'Adept', joined: 'Sep 2017', posts: 1760, karma: 15530, color: '#2f6f4f', sig: 'low and slow. always.' },
+  candlewick_ashes:     { rank: 'Acolyte', joined: 'Dec 2020', posts: 530, karma: 5210, color: '#7a2d4a', sig: 'more than you think. then more than that.' },
+  smokeandbrass:        { rank: 'Acolyte', joined: 'Jul 2022', posts: 214, karma: 1880, color: '#6a4a2d' },
+  ValleyOfHinnom:       { rank: 'Adept', joined: 'May 2015', posts: 2203, karma: 27060, color: '#4a2d6a', sig: 'commit.' },
+  lurker4life:          { rank: 'Initiate', joined: 'Jan 2021', posts: 97, karma: 820, color: '#3f5f5f' },
+  not_a_bot_2019:       { rank: 'Initiate', joined: 'Mar 2019', posts: 45, karma: 311, color: '#5a5a2d' },
+  first_time_poster:    { rank: 'Visitor', joined: '3 days ago', posts: 2, karma: -12, color: '#5f6a7a' }
+};
+
+var POSTS = [
+  ['HollowMod', 1, '7 hours ago', 'Reminder: h/demonolatry is for [i]discussion[/i]. Posts with step-by-step ritual instructions will be removed. If you are in crisis, please step away from the screen and talk to someone you trust.', 0, { modNote: true }],
+  ['Brazen_Calf', 412, '6 hours ago', 'he requires a willing participant. that\'s the whole thing. everything else is details', 0],
+  ['sevenchambers', 356, '6 hours ago', 'souls must be offered in a specific way. there\'s an ORDER to it. people online skip steps and then wonder why nothing happens', 0],
+  ['xX_sulfur_Xx', 301, '6 hours ago', 'NOT FOR NOOBS!!!', 0],
+  ['quietoffering', 188, '6 hours ago', 'this. he can tell if you\'re hesitating', 3],
+  ['throwaway_mlk09', 97, '6 hours ago', 'how can he tell??', 6],
+  ['quietoffering', 143, '6 hours ago', 'he just knows. you\'ll feel it when he does', 7],
+  ['genuinely_concerned_', -34, '6 hours ago', 'willing participant in WHAT exactly? this reads really bad guys', 3],
+  ['first_time_poster', -19, '6 hours ago', 'anyone worried this might be suicide cult bs', 0],
+  ['xX_sulfur_Xx', 284, '6 hours ago', 'GTFO TROLL', 10],
+  ['throwaway_mlk09', 74, '6 hours ago', 'is the order written down anywhere?', 4],
+  ['bronzebellyy', 279, '5 hours ago', 'if attempting DON\'T mess up, hates being blue-balled', 0],
+  ['herbwitch_dani', 247, '5 hours ago', 'gotta stew the herbs just right', 0],
+  ['candlewick_ashes', 233, '5 hours ago', 'start collecting candles NOW op', 0],
+  ['smokeandbrass', 52, '5 hours ago', 'tourist detected', 9],
+  ['sevenchambers', 119, '5 hours ago', 'not anywhere you\'d find on google. check your DMs', 12],
+  ['ashfall_77', 211, '5 hours ago', 'lmaooo not wrong though. my cousin started and stopped halfway. his apartment has smelled like burnt hair for two years', 13],
+  ['throwaway_mlk09', 51, '5 hours ago', 'which herbs??', 14],
+  ['herbwitch_dani', 96, '5 hours ago', 'if you have to ask you\'re not ready. but low heat. LOW. and don\'t you dare walk away from the pot', 19],
+  ['tophet_dweller', 204, '5 hours ago', 'the smell of hot brass is how you know you\'re close', 0],
+  ['bronzebellyy', 176, '5 hours ago', 'commit or don\'t. there is no halfway with him', 0],
+  ['throwaway_mlk09', 63, '5 hours ago', 'wait seriously?', 18],
+  ['bronzebellyy', 158, '5 hours ago', 'once you start don\'t stop. moloch will be angry!!!', 23],
+  ['ValleyOfHinnom', 198, '4 hours ago', 'commit to your actions!!! we are his prize!', 0],
+  ['Brazen_Calf', 102, '4 hours ago', 'WE ARE HIS PRIZE', 0],
+  ['tophet_dweller', 88, '4 hours ago', 'we are his prize', 0],
+  ['quietoffering', 79, '4 hours ago', 'we are his prize', 0],
+  ['genuinely_concerned_', -41, '4 hours ago', 'this is a cult. you guys know this is a cult right', 0],
+  ['xX_sulfur_Xx', 164, '4 hours ago', 'if you\'re too pussy tape a fork to your hand stab your outlet', 0],
+  ['ashfall_77', 90, '4 hours ago', 'ask him yourself. he doesn\'t really talk anymore though', 23],
+  ['ashfall_77', 187, '4 hours ago', 'friend just tried! it definitely worked', 0],
+  ['throwaway_mlk09', 70, '4 hours ago', 'how do you KNOW it worked??', 32],
+  ['quietoffering', 133, '4 hours ago', 'lurked here a full year before I even did the candle part. respect the process', 0],
+  ['lurker4life', 121, '4 hours ago', 'every time one of these threads pops up the brass section at every thrift store in town gets cleaned out lol', 0],
+  ['ashfall_77', 112, '3 hours ago', 'every candle went out at once and there was this sound like a furnace door opening. and she\'s been really calm since. like REALLY calm', 33],
+  ['lurker4life', 58, '3 hours ago', 'the calm is how you know', 36],
+  ['sevenchambers', 0, '3 hours ago', '', 0, { removed: true }],
+  ['not_a_bot_2019', 88, '3 hours ago', 'been lurking here three years. never seen this many people online in one thread at once', 0],
+  ['tophet_dweller', 131, '3 hours ago', 'too many newbs finding this thread, may have to move', 39],
+  ['sevenchambers', 74, '3 hours ago', 'the thin time is coming. everyone can feel it', 0],
+  ['ashfall_77', 19, '3 hours ago', '', 0, { deleted: true }],
+  ['candlewick_ashes', 67, '2 hours ago', 'anyone else\'s lights flickering while reading this thread', 0],
+  ['not_a_bot_2019', 23, '2 hours ago', 'saving this thread', 0],
+  ['throwaway_mlk09', 156, '1 hour ago', 'ok. I\'ve read everything. got the candles. herbs are on the stove. thank you all for being so welcoming', 0],
+  ['Brazen_Calf', 140, '1 hour ago', 'proud of you op', 45],
+  ['genuinely_concerned_', -2, '1 hour ago', 'op please don\'t. please just call someone. anyone', 45],
+  ['throwaway_mlk09', 9, '54 minutes ago', 'I\'m fine. I\'ve never felt more sure about anything', 47],
+  ['throwaway_mlk09', 41, '52 minutes ago', 'is this circle okay??', 0, { image: 'circle.jpg' }],
+  ['Brazen_Calf', 117, '50 minutes ago', 'YES. left it open unlike other dumbasses', 49],
+  ['ValleyOfHinnom', 103, '49 minutes ago', 'MAKE SURE you fall into the circle. otherwise you might end up in heaven…yuck', 0],
+  ['xX_sulfur_Xx', 61, '48 minutes ago', 'op update us!!', 0],
+  ['smokeandbrass', 142, '43 minutes ago', 'trying it now!!!', 0],
+  ['smokeandbrass', 38, '31 minutes ago', 'it\'s getting really warm in here lol', 0, { edited: '12 minutes ago' }],
+  ['tophet_dweller', 99, '20 minutes ago', 'see y\'all on the other side!!!', 0],
+  ['herbwitch_dani', 22, '11 minutes ago', 'keep the pot on low for me', 0],
+  ['throwaway_mlk09', 12, '2 minutes ago', 'it\'s so warm', 0]
+];
+
+/* ------------------------------------------------------------------ */
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+  function md(s) {
+    return esc(s).replace(/\[b\](.*?)\[\/b\]/g, '<b>$1</b>').replace(/\[i\](.*?)\[\/i\]/g, '<i>$1</i>');
+  }
+  function paras(s) { return s.split('\n').map(function (p) { return '<p>' + md(p) + '</p>'; }).join(''); }
+  function fmt(n) { return Number(n).toLocaleString('en-US'); }
+  function user(name) { return USERS[name] || { rank: 'Initiate', joined: 'recently', posts: 1, karma: 1, color: '#6b6b6b' }; }
+
+  var UP = '<svg width="16" height="15" viewBox="0 0 16 15"><path d="M8 0L16 8.5H11V15H5V8.5H0Z"/></svg>';
+  var DOWN = '<svg width="16" height="15" viewBox="0 0 16 15"><path d="M8 15L0 6.5H5V0H11V6.5H16Z"/></svg>';
+
+  // Post #1 is the original post; POSTS follow as #2, #3, ...
+  var all = [[OP.author, OP.points, OP.time, OP.body.join('\n'), 0, { op: true }]].concat(POSTS);
+
+  function tags(name) {
+    var u = user(name), t = '';
+    if (name === OP.author) t += ' <span class="tag op">OP</span>';
+    if (u.mod) t += ' <span class="tag mod">MOD</span>';
+    return t;
+  }
+
+  function postHtml(p, i) {
+    var name = p[0], pts = p[1], time = p[2], text = p[3], q = p[4], opt = p[5] || {};
+    var num = i + 1, u = user(name), row = i % 2 ? 'row2' : 'row1';
+    var gone = opt.deleted || opt.removed;
+
+    var quote = '';
+    if (q && all[q - 1]) {
+      var src = all[q - 1], srcGone = src[5] && (src[5].deleted || src[5].removed);
+      var srcText = srcGone ? '[deleted]' : src[3];
+      if (srcText.length > 180) srcText = srcText.slice(0, 180).replace(/\s+\S*$/, '') + '...';
+      quote = '<div class="quote"><div class="quote-head">' + esc(srcGone ? '[deleted]' : src[0]) + ' wrote (#' + q + '):</div>' + md(srcText) + '</div>';
+    }
+
+    var body = opt.deleted ? '<p class="removed">[deleted]</p>'
+      : opt.removed ? '<p class="removed">[removed by moderator - Rule 3]</p>'
+      : (opt.op ? '<div class="op-title">' + esc(OP.title) + '</div>' : '') + quote + paras(text) +
+        (opt.image ? '<div class="attach"><div class="attach-head">Attachment: <a href="#">' + esc(opt.image) + '</a></div>' +
+          '<img src="' + esc(opt.image) + '" alt="" onerror="this.outerHTML=\'<div class=&quot;attach-missing&quot;>' + esc(opt.image) + ' not found</div>\'"></div>' : '');
+
+    var author = gone
+      ? '<div class="name">[deleted]</div><div class="rank">&nbsp;</div><div class="avatar" style="background:var(--gone)"></div>'
+      : '<div class="name"><a href="#">' + esc(name) + '</a>' + tags(name) + '</div>' +
+        '<div class="rank">' + esc(u.rank) + '</div>' +
+        '<div class="avatar" style="background:' + u.color + '">' + esc(name.replace(/[^A-Za-z]/g, '').charAt(0).toUpperCase()) + '</div>' +
+        '<div class="meta">Joined: ' + esc(u.joined) + '<br>Posts: ' + fmt(u.posts) + '<br>Karma: ' + fmt(u.karma) + '</div>';
+
+    return '<tr class="post-row" id="p' + num + '">' +
+      '<td class="' + row + ' author-col">' + author + '</td>' +
+      '<td class="' + row + ' post-col">' +
+        '<div class="post-head"><span>Posted: <b>' + esc(time) + '</b>' +
+          (opt.op ? '' : ' &middot; Post subject: Re: ' + esc(OP.title)) + '</span>' +
+          '<span class="num">' + (opt.modNote ? '<span class="mod-note">MOD NOTE &middot; </span>' : '') + '<a href="#p' + num + '">#' + num + '</a></span></div>' +
+        '<div class="post-main">' +
+          '<div class="votes"><button class="arrow up" aria-label="upvote">' + UP + '</button>' +
+            '<div class="score' + (pts < 0 ? ' neg' : '') + '" data-base="' + pts + '">' + (gone ? '&bull;' : fmt(pts)) + '</div>' +
+            '<button class="arrow down" aria-label="downvote">' + DOWN + '</button></div>' +
+          '<div class="post-text' + (pts < -5 || gone ? ' faded' : '') + '">' + body + '</div>' +
+        '</div>' +
+        (opt.edited ? '<div class="edited">Last edited by ' + esc(name) + ' ' + esc(opt.edited) + '</div>' : '') +
+        (u.sig && !gone ? '<div class="sig">' + esc(u.sig) + '</div>' : '') +
+        '<div class="post-foot"><span><a href="#">profile</a><a href="#">pm</a></span>' +
+          '<span><a href="#">quote</a><a href="#">reply</a><a href="#">share</a><a href="#">report</a></span></div>' +
+      '</td></tr>' +
+      '<tr class="spacer"><td colspan="2"></td></tr>';
+  }
+
+  // ---- fill page ----
+  var full = SITE.prefix + SITE.community;
+  document.title = OP.title + ' : ' + SITE.community;
+  $('site-name').textContent = SITE.name;
+  $('site-tag').textContent = SITE.tagline;
+  $('community-name').textContent = full;
+  $('community-desc').textContent = SITE.description;
+  $('community-stats').innerHTML = '<b>' + SITE.members + '</b> ' + esc(SITE.membersWord) + ' &nbsp; <span class="online-dot"></span><b>' + SITE.online + '</b> ' + esc(SITE.onlineWord) +
+    ' <button class="joinbtn" type="button">Join</button>';
+  $('flair').textContent = OP.flair;
+  $('thread-title').textContent = OP.title;
+  var crumbs = '<a href="#">' + esc(SITE.name) + ' Index</a> &raquo; <a href="#">' + esc(SITE.category) + '</a> &raquo; <a href="#">' + esc(full) + '</a>';
+  $('crumbs').innerHTML = crumbs;
+  $('crumbs-bottom').innerHTML = crumbs;
+  var pager = 'Page <b>1</b> of <b>1</b> &middot; ' + POSTS.length + ' replies &middot; ' + OP.views + ' views';
+  $('pager').innerHTML = pager;
+  $('pager-bottom').innerHTML = pager;
+
+  $('thread').insertAdjacentHTML('beforeend', all.map(postHtml).join(''));
+
+  $('online').innerHTML = 'Users browsing this community: ' + SITE.onlineNames.map(function (n) { return '<a href="#"><b>' + esc(n) + '</b></a>'; }).join(', ') +
+    ' and ' + SITE.guests + ' guests<br><span style="color:var(--meta)">Most users ever online was <b>666</b> on the night of the last new moon.</span>';
+  $('footer').innerHTML = esc(SITE.name) + ' &middot; <a href="#">rules</a> &middot; <a href="#">help</a> &middot; <a href="#">privacy</a> &middot; <a href="#">terms</a>';
+
+  // ---- dark mode toggle (remembered on this computer) ----
+  function setTheme(dark) {
+    if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.removeAttribute('data-theme');
+    $('theme-toggle').textContent = dark ? 'Light mode' : 'Dark mode';
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  }
+  $('theme-toggle').textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Light mode' : 'Dark mode';
+  $('theme-toggle').addEventListener('click', function () {
+    setTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
+  });
+
+  // ---- interactions (reset on reload) ----
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#"]');
+    if (a) e.preventDefault();
+
+    var arrow = e.target.closest('.arrow');
+    if (!arrow) return;
+    var box = arrow.parentNode;
+    var up = box.querySelector('.up'), down = box.querySelector('.down'), score = box.querySelector('.score');
+    if (score.textContent === '•') return;
+    var wasOn = arrow.classList.contains('on');
+    up.classList.remove('on'); down.classList.remove('on');
+    if (!wasOn) arrow.classList.add('on');
+    var delta = up.classList.contains('on') ? 1 : down.classList.contains('on') ? -1 : 0;
+    score.textContent = fmt(parseInt(score.getAttribute('data-base'), 10) + delta);
+    score.classList.toggle('liked', delta > 0);
+    score.classList.toggle('disliked', delta < 0);
+  });
+})();
+</script>
+</body>
+</html>
